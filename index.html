@@ -1,131 +1,284 @@
 <!doctype html>
-<html lang="en">
-
+<html class="h-100" lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
   <title>countries</title>
-  <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+
 </head>
 
-<body class="bg-light">
-  <header class="header bg-white">
-    <div class="container">
-      <div class="site-header d-flex justify-content-between">
-        <h2 class="alert alert-heading site-header__heading">Where in the world?</h2>
-        <button class="d-flex align-items-center border-0 bg-transparent site-header__button" type="button">Dark Mode</button>
-      </div>
-    </div>
-  </header>
+<body class="d-flex flex-column h-100 bg-light">
 
-  <div class="bg-light">
-    <div class="container">
-      <form class="seach-header" action="https://echo.htmlacademy.ru" method="POST">
-        <div class="main-header mt-2 d-flex align-items-lg-baseline justify-content-between">
-          <div class="search">
-            <input class="search-icon pt-2 pb-2  pr-5" type="search" name="search" placeholder="Search for a country…" required>
-          </div>
+<header class="site-header py-3 bg-white shadow-sm">
+  <div class="container-lg d-flex justify-content-between align-items-center">
+    <a class="site-header__logo font-weight-bold text-dark" href="#">Where in the world?</a>
+    <button class="site-header__theme-toggler btn btn-white btn-sm" type="button">
+      <span class="d-flex">
+        <svg class="mr-1" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5532 13.815C9.66857 13.815 6.51929 10.9278 6.51929 7.36821C6.51929 6.0253 6.96679 4.78158 7.73143 3.75C4.69036 4.69515 2.5 7.33122 2.5 10.4381C2.5 14.3385 5.94929 17.5 10.2036 17.5C13.5929 17.5 16.4696 15.4932 17.5 12.7045C16.375 13.4048 15.0161 13.815 13.5532 13.815Z" fill="white" stroke="#111517" stroke-width="1.25"/>
+          </svg>
+          <span class="site-header__theme-toggler-text">Dark Mode</span>
+      </span>
+    </button>
+  </div>
+</header>
 
-          <select class="region-country bg-white border-0" name="country" id="country">
-            <option class="region-option border-0" value="" selected disabled>Filter by Region</option>
-            <option value="Africa">Africa</option>
-            <option value="America">America</option>
-            <option value="Asia">Asia</option>
-            <option value="Evrope">Evrope</option>
-            <option value="Oceania">Oceania</option>
+
+<main class="site-main flex-grow-1 py-4 py-md-5">
+  <section class="search-form mb-5">
+    <h2 class="sr-only">Site Countries</h2>
+    <div class="container-lg">
+      <form class="row justify-content-between" action="https://echo.htmlacademy.ru" method="GET">
+        <div class="search-form__input-wrapper col-sm-6 col-md-5 mb-4 mb-sm-0">
+          <svg class="search-form__search-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="search">
+            <path id="icon-search-black" fill-rule="evenodd" clip-rule="evenodd" d="M12.5 11H11.7L11.4 10.7C12.4 9.6 13 8.1 13 6.5C13 2.9 10.1 0 6.5 0C2.9 0 0 2.9 0 6.5C0 10.1 2.9 13 6.5 13C8.1 13 9.6 12.4 10.7 11.4L11 11.7V12.5L16 17.5L17.5 16L12.5 11ZM6.5 11C4 11 2 9 2 6.5C2 4 4 2 6.5 2C9 2 11 4 11 6.5C11 9 9 11 6.5 11Z" fill="#848484"/>
+            </g>
+            </svg>
+          <input class="search-form__input form-control border-0 shadow-sm" type="search" name="search" placeholder="Search for a country…" aria-label="Search" required>
+        </div>
+
+        <div class="col-7 col-sm-4 col-lg-3">
+          <select class="form-control border-0 shadow-sm" name="region" aria-label="Region">
+            <option value="" selected disabled>Filter by Region</option>
+            <option value="africa">Africa</option>
+            <option value="america">America</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="oceania">Oceania</option>
           </select>
         </div>
       </form>
     </div>
-  </div>
+  </section>
 
-  <div class="">
-    <div class="container">
+  <section class="countries">
+    <div class="container-lg">
+      <ul class="row list-unstyled">
+        <li class="col-sm-6 col-md-4 col-xl-3 mb-4">
+          <div class="position-relative rounded overflow-hidden bg-white shadow-sm">
+            <a class="d-block stretched-link" href="germany.html">
+              <img class="d-block img-fluid w-100" src="./img/germany-flag.svg" alt="Flag of Germany" width="264" height="160">
+            </a>
 
-      <ul class="country-wrapper mt-5 row d-flex justify-content-between flex-wrap m-0 p-0 list-unstyled">
-
-        <li class="germany col-3 p-0 m-0 border-dark bg-white">
-          <img class="germany-img img-fluid" src="./img/germany-flag.svg" alt="" width="264" height="280">
-
-          <div class="germany-list pt-4 pl-3 pb-5">
-            <h2 class="country">Germany</h2>
-            <p class="population-heading font-weight-800 m-0 mr-2">Population:
-              <span class="ml-2">81,770,900</span>
-            </p>
-            <p class="region-text font-weight-600 m-0 mr-2">Region:
-              <span class="ml-2"> Europe:</span>
-            </p>
-            <p class="capitel-text font-weight-600 m-0 mr-2">Capital:
-              <span class="ml-2">Berlin:</span>
-            </p>
+            <div class="p-3 pb-5">
+              <h3 class="h5 mb-3">Germany</h3>
+              <dl>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Population:</dt>
+                  <dd class="mb-0">81,770,900</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Region:</dt>
+                  <dd class="mb-0">Europe</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Capital:</dt>
+                  <dd class="mb-0">Berlin</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </li>
 
-        <li class="germany col-3 p-0 m-0 border-dark bg-white">
-          <img class="germany-img img-fluid" src="./img/germany-flag.svg" alt="" width="264" height="280">
+        <li class="col-sm-6 col-md-4 col-xl-3 mb-4">
+          <div class="position-relative rounded overflow-hidden bg-white shadow-sm">
+            <a class="d-block stretched-link" href="germany.html">
+              <img class="d-block img-fluid w-100" src="./img/germany-flag.svg" alt="Flag of Germany" width="264" height="160">
+            </a>
 
-          <div class="germany-list pt-4 pl-3 pb-5">
-            <h2 class="country">Germany</h2>
-            <p class="population-heading font-weight-800 m-0 mr-2">Population:
-              <span class="ml-2">81,770,900</span>
-            </p>
-            <p class="region-text font-weight-600 m-0 mr-2">Region:
-              <span class="ml-2"> Europe:</span>
-            </p>
-            <p class="capitel-text font-weight-600 m-0 mr-2">Capital:
-              <span class="ml-2">Berlin:</span>
-            </p>
+            <div class="p-3 pb-5">
+              <h3 class="h5 mb-3">Germany</h3>
+              <dl>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Population:</dt>
+                  <dd class="mb-0">81,770,900</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Region:</dt>
+                  <dd class="mb-0">Europe</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Capital:</dt>
+                  <dd class="mb-0">Berlin</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </li>
 
-        <li class="germany col-3 p-0 m-0 border-dark bg-white">
-          <img class="germany-img img-fluid" src="./img/germany-flag.svg" alt="" width="264" height="280">
+        <li class="col-sm-6 col-md-4 col-xl-3 mb-4">
+          <div class="position-relative rounded overflow-hidden bg-white shadow-sm">
+            <a class="d-block stretched-link" href="germany.html">
+              <img class="d-block img-fluid w-100" src="./img/germany-flag.svg" alt="Flag of Germany" width="264" height="160">
+            </a>
 
-          <div class="germany-list pt-4 pl-3 pb-5">
-            <h2 class="country">Germany</h2>
-            <p class="population-heading font-weight-800 m-0 mr-2">Population:
-              <span class="ml-2">81,770,900</span>
-            </p>
-            <p class="region-text font-weight-600 m-0 mr-2">Region:
-              <span class="ml-2"> Europe:</span>
-            </p>
-            <p class="capitel-text font-weight-600 m-0 mr-2">Capital:
-              <span class="ml-2">Berlin:</span>
-            </p>
+            <div class="p-3 pb-5">
+              <h3 class="h5 mb-3">Germany</h3>
+              <dl>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Population:</dt>
+                  <dd class="mb-0">81,770,900</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Region:</dt>
+                  <dd class="mb-0">Europe</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Capital:</dt>
+                  <dd class="mb-0">Berlin</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </li>
 
-        <li class="germany col-3 p-0 m-0 border-dark bg-white">
-          <img class="germany-img img-fluid" src="./img/germany-flag.svg" alt="" width="264" height="280">
+        <li class="col-sm-6 col-md-4 col-xl-3 mb-4">
+          <div class="position-relative rounded overflow-hidden bg-white shadow-sm">
+            <a class="d-block stretched-link" href="germany.html">
+              <img class="d-block img-fluid w-100" src="./img/germany-flag.svg" alt="Flag of Germany" width="264" height="160">
+            </a>
 
-          <div class="germany-list pt-4 pl-3 pb-5">
-            <h2 class="country">Germany</h2>
-            <p class="population-heading font-weight-800 m-0 mr-2">Population:
-              <span class="ml-2">81,770,900</span>
-            </p>
-            <p class="region-text font-weight-600 m-0 mr-2">Region:
-              <span class="ml-2"> Europe:</span>
-            </p>
-            <p class="capitel-text font-weight-600 m-0 mr-2">Capital:
-              <span class="ml-2">Berlin:</span>
-            </p>
+            <div class="p-3 pb-5">
+              <h3 class="h5 mb-3">Germany</h3>
+              <dl>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Population:</dt>
+                  <dd class="mb-0">81,770,900</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Region:</dt>
+                  <dd class="mb-0">Europe</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Capital:</dt>
+                  <dd class="mb-0">Berlin</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </li>
+
+        <li class="col-sm-6 col-md-4 col-xl-3 mb-4">
+          <div class="position-relative rounded overflow-hidden bg-white shadow-sm">
+            <a class="d-block stretched-link" href="germany.html">
+              <img class="d-block img-fluid w-100" src="./img/germany-flag.svg" alt="Flag of Germany" width="264" height="160">
+            </a>
+
+            <div class="p-3 pb-5">
+              <h3 class="h5 mb-3">Germany</h3>
+              <dl>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Population:</dt>
+                  <dd class="mb-0">81,770,900</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Region:</dt>
+                  <dd class="mb-0">Europe</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Capital:</dt>
+                  <dd class="mb-0">Berlin</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </li>
+
+        <li class="col-sm-6 col-md-4 col-xl-3 mb-4">
+          <div class="position-relative rounded overflow-hidden bg-white shadow-sm">
+            <a class="d-block stretched-link" href="germany.html">
+              <img class="d-block img-fluid w-100" src="./img/germany-flag.svg" alt="Flag of Germany" width="264" height="160">
+            </a>
+
+            <div class="p-3 pb-5">
+              <h3 class="h5 mb-3">Germany</h3>
+              <dl>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Population:</dt>
+                  <dd class="mb-0">81,770,900</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Region:</dt>
+                  <dd class="mb-0">Europe</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Capital:</dt>
+                  <dd class="mb-0">Berlin</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </li>
+
+        <li class="col-sm-6 col-md-4 col-xl-3 mb-4">
+          <div class="position-relative rounded overflow-hidden bg-white shadow-sm">
+            <a class="d-block stretched-link" href="germany.html">
+              <img class="d-block img-fluid w-100" src="./img/germany-flag.svg" alt="Flag of Germany" width="264" height="160">
+            </a>
+
+            <div class="p-3 pb-5">
+              <h3 class="h5 mb-3">Germany</h3>
+              <dl>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Population:</dt>
+                  <dd class="mb-0">81,770,900</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Region:</dt>
+                  <dd class="mb-0">Europe</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Capital:</dt>
+                  <dd class="mb-0">Berlin</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </li>
+
+        <li class="col-sm-6 col-md-4 col-xl-3 mb-4">
+          <div class="position-relative rounded overflow-hidden bg-white shadow-sm">
+            <a class="d-block stretched-link" href="germany.html">
+              <img class="d-block img-fluid w-100" src="./img/germany-flag.svg" alt="Flag of Germany" width="264" height="160">
+            </a>
+
+            <div class="p-3 pb-5">
+              <h3 class="h5 mb-3">Germany</h3>
+              <dl>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Population:</dt>
+                  <dd class="mb-0">81,770,900</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Region:</dt>
+                  <dd class="mb-0">Europe</dd>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <dt class="mr-2">Capital:</dt>
+                  <dd class="mb-0">Berlin</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </li>
       </ul>
     </div>
+  </section>
+
+</main>
+
+
+<footer class="site-footer py-3 mt-auto text-left bg-white">
+  <div class="container">
+    <p class="mb-0 small">Copyright &copy; Frontend Developer</p>
   </div>
+</footer>
 
-  <script src="./js/jquery-3.6.0.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-</script>
-
-<script src="./js/bootstrap.bundle.min.js"
-integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
-</script>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
